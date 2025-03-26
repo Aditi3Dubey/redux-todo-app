@@ -7,7 +7,8 @@ export default function AddTodo() {
   const [input, setInput] = useState("");
 
   function handleTodo() {
-    dispatch(addTodo(input));
+    if(input.trim()==="") return; 
+    dispatch(addTodo(input.trim()));
     setInput("");
   }
   return (
